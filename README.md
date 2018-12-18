@@ -16,7 +16,7 @@ kernel version  |3.18.22+
 
 -----------------------------------------
 
-![VIVO Y67](https://wwwstatic.vivo.com.cn/vivoportal/files/resource//product/1525759498541/images/y67-high-figure3-mini.png)
+![VIVO Y67](http://img0.imgtn.bdimg.com/it/u=4086247218,203782476&fm=26&gp=0.jpg)
 
 # Tree Information
 
