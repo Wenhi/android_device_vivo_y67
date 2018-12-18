@@ -19,30 +19,26 @@ Front Camera | 8MP (OV)
 
 ---
 
-# Build Information
+# Tree Information
 
-### In progress(only for cm-14.0):
- * Hardware acceleration
+Work
  * Wi-Fi
- * Offline charging
- * GPS
- * AGPS
- * Vibration
- * Audio
- * Auto brightness
- * Doze
- * RAM and ROM
- * Rotation
  * All sensors
- * NFC (payments, pairing .etc)
- * Lazer autofocus
- * Flashlight (statusbar and camera)
  * Bluetooth
- * Camera rear/front (video and photo)
- * Micro SD support
  * MTP and Mass Storage modes
  * Audio over Bluetooth (music, calls .etc)
- * Fingerprint scanner
- * Wi-Fi tethering
- * HOME Button like in stock
- * Special button new functional
+ * Micro SD support
+ * Vibration
+ * Doze
+ * Rotation
+ * Auto brightness
+ * FM radio
+ 
+No work
+ * GPS
+ * AGPS
+ * Audio
+ * Camera rear/front (video and photo)
+ * flashlight
+ * Fingerprint
+ * HOME Button
