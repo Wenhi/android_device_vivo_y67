@@ -213,4 +213,7 @@ public class KeyHandler implements DeviceKeyHandler {
 		handlerVibrator.vibrate(pattern, -1);
 	}
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801

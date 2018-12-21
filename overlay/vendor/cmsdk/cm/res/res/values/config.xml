@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+<<<<<<< HEAD
      Copyright (C) 2015-2016 The CyanogenMod Project
                    2017 The LineageOS Project
 
+=======
+     Copyright (C) 2016 The CyanogenMod Project
+>>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -14,9 +18,15 @@
      limitations under the License.
 -->
 <resources>
+<<<<<<< HEAD
     <!-- Turn on LiveDisplay auto mode by default -->
         <integer name="config_defaultLiveDisplayMode">2</integer>
 
+=======
+	<!-- Default values for LiveDisplay -->
+    <integer name="config_defaultLiveDisplayMode">0</integer>
+    
+>>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
     <!-- Paths to the libraries that contain device specific key handlers -->
     <string-array name="config_deviceKeyHandlerLibs" translatable="false">
         <item>/system/framework/com.cyanogenmod.keyhandler.jar</item>
@@ -26,5 +36,10 @@
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
         <item>com.cyanogenmod.settings.device.KeyHandler</item>
     </string-array>
+<<<<<<< HEAD
 
 </resources>
+=======
+</resources>
+
+>>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801

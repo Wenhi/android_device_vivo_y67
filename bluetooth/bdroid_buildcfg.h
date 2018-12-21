@@ -17,5 +17,9 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
+<<<<<<< HEAD
 #define BTM_DEF_LOCAL_NAME   "VIVO Y67"
+=======
+#define BTM_DEF_LOCAL_NAME   "vivo y67"
+>>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
 #endif

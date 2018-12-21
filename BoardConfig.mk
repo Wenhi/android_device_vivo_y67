@@ -1,8 +1,33 @@
+<<<<<<< HEAD
 
 TARGET_BOARD_PLATFORM := mt6755
 
 DEVICE_PATH := device/vivo/y67
 
+=======
+#
+# Copyright (C) 2016 The LineageOS Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+TARGET_BOARD_PLATFORM := mt6750
+ 
+DEVICE_PATH := device/vivo/y67
+
+# Disable NINJA
+#USE_NINJA := false
+
+>>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
 MTK_PROJECT_CONFIG ?= $(DEVICE_PATH)/ProjectConfig.mk
 include $(MTK_PROJECT_CONFIG)
 include device/cyanogen/mt6755-common/BoardConfigCommon.mk
@@ -14,9 +39,12 @@ MTK_INTERNAL_CDEFS += $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_NAME_VALUE),$(if $
 BOARD_GLOBAL_CFLAGS += $(MTK_INTERNAL_CDEFS)
 BOARD_GLOBAL_CPPFLAGS += $(MTK_INTERNAL_CDEFS)
 
+<<<<<<< HEAD
 # Support of MTK NFC
 MTK_NFC_SUPPORT := yes
 
+=======
+>>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
 # Kernel informations
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_BASE := 0x40078000
@@ -25,7 +53,19 @@ BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 enforcing=0 androidboot.selinux=p
 BOARD_MKBOOTIMG_ARGS := --board 1465391499 --ramdisk_offset 0x04f88000 --second_offset 0x00e88000 --tags_offset 0x03f88000
 
 # Kernel properties
+<<<<<<< HEAD
 TARGET_PREBUILT_KERNEL := device/vivo/y67/prebuilt/kernel
+=======
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_SOURCE := kernel/vivo/y67
+TARGET_KERNEL_CONFIG := mt6750_debug_defconfig
+TARGET_PREBUILT_KERNEL := device/vivo/y67/prebuilt/kernel
+
+# Hack for build
+$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
+
+>>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
 TARGET_BOOTLOADER_BOARD_NAME := y67
 
 # Bluetooth
@@ -45,6 +85,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+<<<<<<< HEAD
 
 # Hack for build
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
+=======
+>>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801

@@ -2,6 +2,7 @@
 ro.telephony.default_network=9
 
 # Graphics
+<<<<<<< HEAD
 ro.sf.lcd_density=320
 
 # Tethering
@@ -158,3 +159,9 @@ media.stagefright.less-secure=true
 
 #fingerprint
 persist.vivo.fingerprint.front=true
+=======
+ro.sf.lcd_density=460
+
+# Tethering
+wifi.tethering.interface=wlan0
+>>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801

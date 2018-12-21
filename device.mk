@@ -27,7 +27,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/camera/camerasize.xml:system/etc/camerasize.xml
 
 # Recovery allowed devices
+<<<<<<< HEAD
 TARGET_OTA_ASSERT_DEVICE := y67,y67,vivo,vivo,c239v55_dx
+=======
+TARGET_OTA_ASSERT_DEVICE := y67,y67,vivo,vivo,PD1216MA
+>>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
 
 # Charger and USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -119,6 +123,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/ril/custom/lib64/mtk-ril.so:system/lib64/mtk-ril.so \
     $(LOCAL_PATH)/prebuilt/ril/custom/lib64/mtk-rilmd2.so:system/lib64/mtk-rilmd2.so
 
+<<<<<<< HEAD
 # keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/usr/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
@@ -143,6 +148,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/vilte/viLTE_media_profiles_OP117.xml:system/etc/vilte/viLTE_media_profiles_OP117.xml  \
     $(LOCAL_PATH)/configs/vilte/viLTE_media_profiles.xml:system/etc/vilte/viLTE_media_profiles.xml \
     $(LOCAL_PATH)/configs/vilte/viLTE_media_profiles_OP18.xml:system/etc/vilte/viLTE_media_profiles_OP18.xml
+=======
+# Media
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
+>>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
 
 # Thermal
 PRODUCT_COPY_FILES += \
@@ -176,9 +187,13 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
+<<<<<<< HEAD
     YGPS \
     libcurl \
     libnl_2
+=======
+    YGPS
+>>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
 
 # Telephony
 SIM_COUNT := 2
