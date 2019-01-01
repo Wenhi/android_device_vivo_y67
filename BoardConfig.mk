@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-
-TARGET_BOARD_PLATFORM := mt6755
-
-DEVICE_PATH := device/vivo/y67
-
-=======
 #
-# Copyright (C) 2016 The LineageOS Project
+# Copyright (C) 2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,17 +13,26 @@ DEVICE_PATH := device/vivo/y67
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-TARGET_BOARD_PLATFORM := mt6750
- 
 DEVICE_PATH := device/vivo/y67
 
-# Disable NINJA
-#USE_NINJA := false
+# Architecture
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 :=
+TARGET_CPU_VARIANT := cortex-a53
 
->>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := cortex-a53
+
+BOARD_FLASH_BLOCK_SIZE := 4096
+
+# MTK project
 MTK_PROJECT_CONFIG ?= $(DEVICE_PATH)/ProjectConfig.mk
 include $(MTK_PROJECT_CONFIG)
-include device/cyanogen/mt6755-common/BoardConfigCommon.mk
 
 MTK_INTERNAL_CDEFS := $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_NAME),$(if $(filter-out no NO none NONE false FALSE,$($(t))),-D$(t)))
 MTK_INTERNAL_CDEFS += $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_VALUE),$(if $(filter-out no NO none NONE false FALSE,$($(t))),$(foreach v,$(shell echo $($(t)) | tr '[a-z]' '[A-Z]'),-D$(v))))
@@ -39,40 +41,81 @@ MTK_INTERNAL_CDEFS += $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_NAME_VALUE),$(if $
 BOARD_GLOBAL_CFLAGS += $(MTK_INTERNAL_CDEFS)
 BOARD_GLOBAL_CPPFLAGS += $(MTK_INTERNAL_CDEFS)
 
-<<<<<<< HEAD
-# Support of MTK NFC
-MTK_NFC_SUPPORT := yes
+# Audio
+USE_CUSTOM_AUDIO_POLICY := 1
+BOARD_USES_MTK_AUDIO := true
+USE_XML_AUDIO_POLICY_CONF := 1
 
-=======
->>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
+# Bootloader
+TARGET_NO_BOOTLOADER := true
+TARGET_BOARD_PLATFORM := mt6755
+TARGET_BOOTLOADER_BOARD_NAME := mt6755
+
+# Bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_CONNECTIVITY_MODULE := conn_soc
+BOARD_BLUETOOTH_BDROID_HCILP_INCLUDED := 0
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+
+# Camera and Codecs
+BOARD_GLOBAL_CFLAGS += -DMETADATA_CAMERA_SOURCE
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
+
+# CMHW
+BOARD_USES_CYANOGEN_HARDWARE := true
+BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/hal/cmhw
+
+# Common properties
+TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
+
+# Display
+USE_OPENGL_RENDERER := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+MAX_VIRTUAL_DISPLAY_DIMENSION := 1
+PRESENT_TIME_OFFSET_FROM_VSYNC_NS := 0
+MTK_HWC_SUPPORT := yes
+MTK_HWC_VERSION := 1.5.0
+TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+
+# FSTAB
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt6755
+
+# Include
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
+
 # Kernel informations
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-BOARD_KERNEL_BASE := 0x40078000
+TARGET_KERNEL_ARCH := arm64
 BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_BASE := 0x40078000
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+TARGET_PREBUILT_KERNEL := device/vivo/y67/prebuilt/kernel
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 enforcing=0 androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --board 1465391499 --ramdisk_offset 0x04f88000 --second_offset 0x00e88000 --tags_offset 0x03f88000
 
-# Kernel properties
-<<<<<<< HEAD
-TARGET_PREBUILT_KERNEL := device/vivo/y67/prebuilt/kernel
-=======
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_KERNEL_SOURCE := kernel/vivo/y67
-TARGET_KERNEL_CONFIG := mt6750_debug_defconfig
-TARGET_PREBUILT_KERNEL := device/vivo/y67/prebuilt/kernel
+# Misc
+EXTENDED_FONT_FOOTPRINT := true
 
-# Hack for build
-$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
+# Mediatek support
+USE_CAMERA_STUB := true
+MTK_MEDIA_PROFILES := true
+BOARD_HAS_MTK_HARDWARE := true
+BOARD_USES_MTK_HARDWARE := true
+BOARD_USES_MTK_MEDIA_PROFILES := true
 
->>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
-TARGET_BOOTLOADER_BOARD_NAME := y67
+# Media
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+TARGET_OMX_LEGACY_RESCALING := true
+BOARD_USES_LEGACY_MTK_AV_BLOB := true
+TARGET_PROVIDES_CAMERA_HAL := true
+USE_DEVICE_SPECIFIC_CAMERA := true
+TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
 
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
-
+# Package size
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 32777216
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_CACHEIMAGE_PARTITION_SIZE := 452984832
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -84,10 +127,30 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-<<<<<<< HEAD
+# Recovery
+TARGET_USERIMAGES_USE_EXT4 := true
 
-# Hack for build
-$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
-=======
->>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
+# Release Tools
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
+
+# RIL
+BOARD_RIL_CLASS := ../../../device/vivo/y67/hal/ril
+
+# Sensors
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+TARGET_NO_SENSOR_PERMISSION_CHECK := true
+
+# SELinux
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+POLICYVERS := 29
+
+# Wireless
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_mt66xx
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_mt66xx
+WIFI_DRIVER_FW_PATH_PARAM := /dev/wmtWifi
+WIFI_DRIVER_FW_PATH_AP := AP
+WIFI_DRIVER_FW_PATH_STA := STA
+WIFI_DRIVER_FW_PATH_P2P := P2P

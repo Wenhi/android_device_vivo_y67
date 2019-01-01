@@ -1,4 +1,4 @@
-# Copyright (C) 2016 The LineageOS Project
+# Copyright (C) 2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,14 +18,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from y67
 $(call inherit-product, device/vivo/y67/device.mk)
 
-<<<<<<< HEAD
-# Keyhandler
-PRODUCT_PACKAGES += \
-    CMActions \
-=======
 # Keyhandler package
 PRODUCT_PACKAGES += \
->>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
     com.cyanogenmod.keyhandler
 
 PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler

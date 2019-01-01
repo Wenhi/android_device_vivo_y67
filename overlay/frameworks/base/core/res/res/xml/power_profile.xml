@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 **
-<<<<<<< HEAD
-** Copyright 2016, The Android Open Source Project
-=======
 ** Copyright 2009, The Android Open Source Project
->>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
 **
 ** Licensed under the Apache License, Version 2.0 (the "License")
 ** you may not use this file except in compliance with the License.
@@ -31,43 +27,6 @@
        are totally dependent on the platform and can vary
        significantly, so should be measured on the shipping platform
        with a power meter. -->
-<<<<<<< HEAD
-    <item name="none">0</item>
-    <item name="screen.on">180</item>
-    <item name="screen.full">280</item>
-    <item name="bluetooth.active">104</item>
-    <item name="bluetooth.on">4</item>
-    <item name="wifi.on">5</item>
-    <item name="wifi.active">200</item>
-    <item name="wifi.scan">100</item>
-    <item name="dsp.audio">100</item>
-    <item name="dsp.video">100</item>
-    <item name="radio.active">300</item>
-    <item name="radio.scanning">10</item>
-    <item name="gps.on">30</item>
-    <array name="radio.on">
-        <value>4</value>
-        <value>4</value>
-    </array>
-  <!-- Different CPU speeds as reported in
-       /sys/devices/system/cpu/cpufreq/all_time_in_state -->
-  <array name="cpu.speeds">
-      <value>299000</value> <!-- 299 MHz CPU speed -->
-      <value>442000</value> <!-- 442 MHz CPU speed -->
-      <value>598000</value> <!-- 598 MHz CPU speed -->
-      <value>819000</value> <!-- 819 MHz CPU speed -->
-      <value>1014000</value> <!-- 1014 MHz CPU speed -->
-      <value>1040000</value> <!-- 1040 MHz CPU speed -->
-      <value>1144000</value> <!-- 1144 MHz CPU speed -->
-      <value>1235000</value> <!-- 1235 MHz CPU speed -->
-      <value>1300000</value> <!-- 1300 MHz CPU speed -->
-  </array>
-
-  <!-- Current when CPU is idle -->
-  <item name="cpu.idle">6</item>
-  <!-- Current when CPU is awake -->
-  <item name="cpu.awake">34</item>
-=======
   <item name="none">0</item>
   <item name="screen.on">200</item>  <!-- ~200mA -->
   <item name="screen.full">300</item>  <!-- ~300mA -->
@@ -109,7 +68,6 @@
   </array>
   <!-- Current when CPU is idle -->
   <item name="cpu.idle">100</item>
->>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
   <!-- Current at each CPU speed, as per 'cpu.speeds' -->
   <array name="cpu.active">
       <value>50.3</value> <!-- ~70mA -->
@@ -129,16 +87,6 @@
       <value>313.6</value> <!-- ~440mA -->
   </array>
   <!-- This is the battery capacity in mAh (measured at nominal voltage) -->
-<<<<<<< HEAD
-  <item name="battery.capacity">3100</item>
-
-  <array name="wifi.batchedscan"> <!-- mA -->
-      <value>.0002</value> <!-- 1-8/hr -->
-      <value>.002</value> <!-- 9-64/hr -->
-      <value>.02</value> <!-- 65-512/hr -->
-      <value>.2</value> <!-- 513-4,096/hr -->
-      <value>2</value> <!-- 4097-/hr -->
-=======
   <item name="battery.capacity">3000</item>
 
   <array name="wifi.batchedscan"> <!-- mA -->
@@ -147,6 +95,5 @@
       <value>20</value>   <!-- 65-512/hr -->
       <value>200</value>    <!-- 513-4,096/hr -->
       <value>500</value>    <!-- 4097-/hr -->
->>>>>>> c4c5c82398c6da0a723d66ae5f7737050782c801
   </array>
 </device>
