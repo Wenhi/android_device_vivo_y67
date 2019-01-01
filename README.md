@@ -12,7 +12,7 @@ Battery         | 3000 mAh
 Display         | 5.5" 1280 x 720 px DPI 320
 Rear Camera     | 13MP (Sony IMX258 Exmor RS), Dual LED Flash, Laser autofocus
 Front Camera    | 8MP (OV)
-kernel version  |3.18.22+
+kernel version  | 3.18.22+
 
 -----------------------------------------
 
@@ -35,9 +35,7 @@ Work
  
 No work
  * GPS
- * AGPS
  * Audio
  * Camera rear/front (video and photo)
  * flashlight
  * Fingerprint
- * HOME Button
