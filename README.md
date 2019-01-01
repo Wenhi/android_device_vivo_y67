@@ -16,7 +16,7 @@ kernel version  | 3.18.22+
 
 -----------------------------------------
 
-![VIVO Y67](http://img0.imgtn.bdimg.com/it/u=4086247218,203782476&fm=26&gp=0.jpg)
+![VIVO Y67](http://img0.imgtn.bdimg.com/it/u=3345931723,2853446073&fm=26&gp=0.jpg)
 
 # Tree Information
 
