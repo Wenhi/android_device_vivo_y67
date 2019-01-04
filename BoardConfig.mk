@@ -30,17 +30,6 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 
 BOARD_FLASH_BLOCK_SIZE := 4096
 
-# MTK project
-MTK_PROJECT_CONFIG ?= $(DEVICE_PATH)/ProjectConfig.mk
-include $(MTK_PROJECT_CONFIG)
-
-MTK_INTERNAL_CDEFS := $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_NAME),$(if $(filter-out no NO none NONE false FALSE,$($(t))),-D$(t)))
-MTK_INTERNAL_CDEFS += $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_VALUE),$(if $(filter-out no NO none NONE false FALSE,$($(t))),$(foreach v,$(shell echo $($(t)) | tr '[a-z]' '[A-Z]'),-D$(v))))
-MTK_INTERNAL_CDEFS += $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_NAME_VALUE),$(if $(filter-out no NO none NONE false FALSE,$($(t))),-D$(t)=\"$($(t))\"))
-
-BOARD_GLOBAL_CFLAGS += $(MTK_INTERNAL_CDEFS)
-BOARD_GLOBAL_CPPFLAGS += $(MTK_INTERNAL_CDEFS)
-
 # Audio
 USE_CUSTOM_AUDIO_POLICY := 1
 BOARD_USES_MTK_AUDIO := true
@@ -64,7 +53,7 @@ media.stagefright.less-secure=true
 
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/hal/cmhw
+BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/mtk/cmhw
 
 # Common properties
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
@@ -105,6 +94,16 @@ BOARD_HAS_MTK_HARDWARE := true
 BOARD_USES_MTK_HARDWARE := true
 BOARD_USES_MTK_MEDIA_PROFILES := true
 
+MTK_PROJECT_CONFIG ?= $(DEVICE_PATH)/ProjectConfig.mk
+include $(MTK_PROJECT_CONFIG)
+
+MTK_INTERNAL_CDEFS := $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_NAME),$(if $(filter-out no NO none NONE false FALSE,$($(t))),-D$(t)))
+MTK_INTERNAL_CDEFS += $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_VALUE),$(if $(filter-out no NO none NONE false FALSE,$($(t))),$(foreach v,$(shell echo $($(t)) | tr '[a-z]' '[A-Z]'),-D$(v))))
+MTK_INTERNAL_CDEFS += $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_NAME_VALUE),$(if $(filter-out no NO none NONE false FALSE,$($(t))),-D$(t)=\"$($(t))\"))
+
+BOARD_GLOBAL_CFLAGS += $(MTK_INTERNAL_CDEFS)
+BOARD_GLOBAL_CPPFLAGS += $(MTK_INTERNAL_CDEFS)
+
 # Media
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_OMX_LEGACY_RESCALING := true
@@ -134,7 +133,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # RIL
-BOARD_RIL_CLASS := ../../../device/vivo/y67/hal/ril
+BOARD_RIL_CLASS := ../../../device/vivo/y67/mtk/ril
 
 # Sensors
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
