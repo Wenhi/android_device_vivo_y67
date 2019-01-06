@@ -63,3 +63,9 @@ cd ../..
 cd vendor/sm
 git apply -v ../../device/vivo/y67/patches/sudamod-fix-build-bootanimation-error.patch
 cd ../..
+# TEST
+# ----------------------------------
+cd packages/providers/DownloadProvider
+git apply -v ../../device/vivo/y67/patches/0006-unbuild-downloadprovider-for-sudamod.patch
+cd ../../..
+# ----------------------------------

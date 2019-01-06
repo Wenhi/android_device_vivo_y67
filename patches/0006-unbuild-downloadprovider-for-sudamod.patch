@@ -1,0 +1,16 @@
+diff --git a/Android.mk b/Android.mk
+index 75597f5..1061e02 100644
+--- a/Android.mk
++++ b/Android.mk
+@@ -1,3 +1,5 @@
++ifeq ($(USE_PACKAGE_DP_APPS),ture)
++
+ LOCAL_PATH:= $(call my-dir)
+ include $(CLEAR_VARS)
+ 
+@@ -17,3 +19,5 @@ include $(BUILD_PACKAGE)
+ 
+ # build UI + tests
+ include $(call all-makefiles-under,$(LOCAL_PATH))
++
++endif
