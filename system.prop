@@ -76,10 +76,6 @@ persist.mal.mode=0
 
 mtk.vcodec.mpeg2.timeout=500
 
-# 233
-ro.hardware.bbk=PD1612MA
-ro.hardware.bbk=PD1612CMA
-
 import /oem/oem.prop
 
 
