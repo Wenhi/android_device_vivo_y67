@@ -1,6 +1,3 @@
-USE_CAMERA_STUB := true
-TARGET_NO_BOOTLOADER := true
-
 # inherit from the proprietary version
 -include vendor/vivo/y67/BoardConfigVendor.mk
 
@@ -25,20 +22,20 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
+TARGET_USES_64_BIT_BINDER := true
+
+BOARD_FLASH_BLOCK_SIZE := 131072
+
 # Architecture Extensions
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_NEON := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 ARCH_ARM_HAVE_VFP := true
-BOARD_HAS_LARGE_FILESYSTEM := true
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
-TARGET_USES_64_BIT_BINDER := true
+
 BOARD_MKBOOTIMG_ARGS := --board 1466056865 --kernel_offset 0x00008000 --ramdisk_offset 0x04f88000 --tags_offset 0x03f88000
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive product.version=PD1612_A_1.11.5
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_RAMDISK_OFFSET := 0x03f88000
 TARGET_PREBUILT_KERNEL := device/vivo/y67/prebuilt/kernel
 
 # Partitions
@@ -48,9 +45,6 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1610612736
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12831948800
 BOARD_CACHEIMAGE_PARTITION_SIZE := 419430400
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_FLASH_BLOCK_SIZE := 131072
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_CUSTOM_BOOTIMG_MK := device/vivo/y67/tools/mkbootimg.mk
 
 # Partitions types
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -95,10 +89,6 @@ TARGET_SYSTEM_PROP := device/vivo/y67/system.prop
 
 # Use old sepolicy version
 POLICYVERS := 29
-
-# Crypto
-TW_INCLUDE_CRYPTO := true
-TW_CRYPTO_USE_SYSTEM_VOLD := hwsvcmngr keym3 teed
 
 # Recovery allowed devices
 TARGET_OTA_ASSERT_DEVICE := PD1612,bbk6750_66_m,y67,Y67,PD1612MD,PD1612CMD,y67a,y67l,Y67A,Y67L
