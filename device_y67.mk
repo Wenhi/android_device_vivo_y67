@@ -23,6 +23,14 @@ PRODUCT_PACKAGES += \
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
-# Time Zone data Credits to desalesouche
-#PRODUCT_COPY_FILES += \
-#	bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+# TWRP
+PRODUCT_PACKAGES += \
+    init.recovery.vold_decrypt.rc
+
+# Default.prop
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    persist.sys.usb.config=mtp,adb \
+    ro.zygote=zygote64_32 \
+    persist.sys.timezone=Asia/Shanghai

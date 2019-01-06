@@ -1,5 +1,5 @@
 /system			ext4	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/system	flags=display="System";backup=1;wipeingui;flashimg=1
-/data			f2fs	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/userdata		flags=encryptable=/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/metadata;flashimg=1
+/data			ext4	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/userdata		flags=encryptable=/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/metadata;flashimg=1
 /cache			ext4	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/cache	flags=display="Cache";backup=1;wipeingui;wipeduringfactoryreset;flashimg=1
 /proinfo		emmc	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/proinfo		flags=display="proinfo";backup=1
 /nvram			emmc	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/nvram		flags=display="nvram";backup=1;flashimg=1
